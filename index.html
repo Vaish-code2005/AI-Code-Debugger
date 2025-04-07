@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Code Debugger</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col items-center p-6 font-sans text-gray-800">
+  <div id="loader" class="hidden">
+    <div class="text-white text-lg animate-bounce">🔍 Debugging...</div>
+  </div>
+
+  <div class="theme-toggle">
+    <button id="themeToggle" class="bg-gray-900 text-white px-4 py-1 rounded hover:bg-gray-700">Toggle Dark Mode</button>
+  </div>
+  <div class="w-full max-w-4xl mt-12">
+    <div class="editor-header rounded-t-lg">AI Code Debugger</div>
+    <div class="bg-white dark:bg-gray-800 p-4 rounded-b-lg shadow-md glass">
+      <label for="language" class="block mb-2 font-semibold">Select Language:</label>
+      <select id="language" class="w-full p-2 mb-4 border rounded">
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="c">C</option>
+        <option value="html">HTML</option>
+      </select>
+
+      <label for="codeInput" class="block mb-2 font-semibold">Enter your code:</label>
+      <textarea id="codeInput" rows="10" class="w-full p-2 mb-4 border rounded" placeholder="Paste your code here..."></textarea>
+
+      <div class="file-upload">
+        <label class="block mb-2 font-semibold" for="fileInput">Or upload a code file:</label>
+        <input type="file" id="fileInput" class="w-full border p-2 rounded" />
+      </div>
+
+      <div class="flex flex-wrap gap-4 mt-4">
+        <button id="debugBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Debug Code</button>
+        <button onclick="runCode()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Run Code</button>
+      </div>
+
+      <div id="result" class="terminal-output mt-6"></div>
+
+      <div class="info-box">
+        <p><strong>Tips & Features:</strong></p>
+        <ul class="list-disc ml-6 mt-2 text-sm">
+          <li>Upload files or paste code directly for debugging.</li>
+          <li>AI-powered suggestions for fixing errors.</li>
+          <li>Instant live output with detailed feedback.</li>
+          <li>Dark/light mode for better accessibility.</li>
+          <li>Supported languages: JavaScript, Python, C++, Java, C, HTML.</li>
+          <li>Loading animation while debugging is in progress.</li>
+          <li>Interactive modern styling using Tailwind CSS.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">&copy; 2025 AI Debugger by Ashutosh Kumar sonu, 
+    Satvik Chauhan, 
+    Vaishnavi saw</div>
+  <script src="script.js"></script>
+</body>
+</html>

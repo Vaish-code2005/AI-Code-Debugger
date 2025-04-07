@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2, #80deea, #4dd0e1);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+textarea.dark, select.dark, input.dark {
+  background-color: #1e293b;
+  color: #e5e7eb;
+  border-color: #374151;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.editor-header {
+  background: #0f172a;
+  color: #fff;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.terminal-output {
+  background: #1e293b;
+  color: #22c55e;
+  font-family: monospace;
+  padding: 10px;
+  border-radius: 0.5rem;
+  min-height: 100px;
+}
+.highlight {
+  animation: highlightFlash 1.2s ease;
+}
+@keyframes highlightFlash {
+  0% { background-color: #fef3c7; }
+  100% { background-color: transparent; }
+}
+.info-box {
+  background: #e0f2fe;
+  padding: 16px;
+  border-radius: 0.5rem;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+.file-upload {
+  margin-top: 16px;
+}
+#loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#loader.hidden {
+  display: none;
+}
